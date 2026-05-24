@@ -41,8 +41,10 @@ PowerShell
 $env:VCPKG_ROOT="C:\vcpkg"
 
 Запустите готовую игру из этой же консоли:
+
 PowerShell
 msbuild Lab3.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+
 PowerShell
 .\x64\Debug\Lab3.exe
 
