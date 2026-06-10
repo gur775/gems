@@ -17,44 +17,45 @@
    git clone [https://github.com/microsoft/vcpkg.git](https://github.com/microsoft/vcpkg.git)
    cd vcpkg
    .\bootstrap-vcpkg.bat
+   ```
 Шаг 2. Интеграция vcpkg в систему
 
 Привяжите vcpkg к вашей Visual Studio:
 
-PowerShell
+```PowerShell
 
 .\vcpkg integrate install
-
+```
 Шаг 3. Установка библиотеки SFML 3
 Перейдите в папку с vcpkg и установите графическую библиотеку под 64-битную архитектуру:
 
-PowerShell
+```PowerShell
 
 cd C:\vcpkg
 
 .\vcpkg install sfml:x64-windows
-
+```
 Шаг 4. Клонирование репозитория с игрой
 
 Шаг 5. Сборка и запуск игры
-Найдите приложение Developer PowerShell for VS 2022 (оно устанавливается вместе с Visual Studio).
+Откройте Developer PowerShell for VS 2022.
 
-В консоли перейдите в папку со склонированной игрой:
 
 Перейдите в папку вашего проекта:
 
-PowerShell
+```PowerShell
 cd "Путь_к_вашему_репозиторию"
+```
 Перед сборкой нам нужно сказать системе, где лежит ваш vcpkg. Выполните команду (замените путь на ваш, если он отличается):
 
-PowerShell
+```PowerShell
 $env:VCPKG_ROOT="C:\vcpkg"
-
+```
 Запустите готовую игру из этой же консоли:
 
-PowerShell 
+```PowerShell 
 msbuild Lab3.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
-
-PowerShell
+```
+```PowerShell
 .\x64\Debug\Lab3.exe
-
+```
